@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Portal V2.0 - Propuesta de Wireframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+        }
+        
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            color: #1d1d1f;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 12px;
+        }
+        
+        .section h3 {
+            font-size: 22px;
+            margin: 30px 0 16px 0;
+            color: #333;
+        }
+        
+        .section p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+        
+        .highlight-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .wireframe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .wireframe-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .wireframe-card:hover {
+            border-color: #667eea;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+        }
+        
+        .wireframe-card h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #667eea;
+        }
+        
+        .wireframe-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .wireframe-card ul li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 15px;
+        }
+        
+        .wireframe-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .phone-mockup {
+            width: 320px;
+            height: 650px;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 12px;
+            margin: 20px auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .screen-content {
+            padding: 20px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 16px;
+            background: #f8f9fa;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .seller-header {
+            background: white;
+            padding: 16px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .seller-logo {
+            width: 80px;
+            height: 40px;
+            background: #e9ecef;
+            margin: 0 auto 8px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #666;
+        }
+        
+        .progress-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px;
+            background: #f8f9fa;
+        }
+        
+        .dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .dot.active {
+            background: #667eea;
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .dot.completed {
+            background: #28a745;
+            color: white;
+        }
+        
+        .dot.pending {
+            background: #e9ecef;
+            color: #adb5bd;
+        }
+        
+        .status-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 16px 0;
+            text-align: center;
+        }
+        
+        .status-card h2 {
+            font-size: 20px;
+            margin-bottom: 4px;
+            color: white;
+            border: none;
+            padding: 0;
+        }
+        
+        .status-card p {
+            font-size: 14px;
+            opacity: 0.9;
+            color: white;
+            margin: 0;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .card-content {
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+            margin: 16px 0;
+        }
+        
+        .timeline:before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e9ecef;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e9ecef;
+            border: 2px solid white;
+        }
+        
+        .timeline-dot.completed {
+            background: #28a745;
+        }
+        
+        .timeline-dot.active {
+            background: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 8px 0;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #667eea;
+            border: 1px solid #667eea;
+        }
+        
+        .btn-danger {
+            background: #fff5f5;
+            color: #c53030;
+        }
+        
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        
+        .modal-sheet {
+            background: white;
+            width: 100%;
+            max-height: 80%;
+            border-radius: 24px 24px 0 0;
+            padding: 24px;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .input-group {
+            margin-bottom: 16px;
+        }
+        
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 6px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+        
+        .rating-stars {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 16px 0;
+        }
+        
+        .star {
+            font-size: 32px;
+            color: #ffc107;
+        }
+        
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 30px 0;
+        }
+        
+        .innovation-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-left: 4px solid #667eea;
+            padding: 24px;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .innovation-card h4 {
+            font-size: 18px;
+            color: #667eea;
+            margin-bottom: 12px;
+        }
+        
+        .innovation-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .tag-must {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .tag-nice {
+            background: #cce5ff;
+            color: #004085;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 32px;
+            }
+            
+            .phone-mockup {
+                width: 280px;
+                height: 570px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Buyer Portal V2.0</h1>
+            <p>Propuesta de Wireframes Out of the Box</p>
+            <p style="margin-top: 16px; font-size: 16px;">Simple, intuitivo y revolucionario</p>
+        </header>
+
+        <div class="section">
+            <h2>💡 Filosofía de Diseño</h2>
+            
+            <div class="highlight-box">
+                <h3>Menos es Más</h3>
+                <p>Hemos reducido la complejidad a solo 3 vistas principales en lugar de 7, manteniendo toda la funcionalidad pero con una experiencia más fluida y natural.</p>
+            </div>
+
+            <div class="innovation-grid">
+                <div class="innovation-card">
+                    <h4>📱 Mobile-First Extremo</h4>
+                    <p>Diseñado específicamente para el 90% de usuarios que accederán desde WhatsApp en móvil. Sin distracciones, sin menús complejos.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <h4>🎯 Una Acción por Pantalla</h4>
+                    <p>Cada vista tiene un propósito único y claro. El buyer nunca se siente abrumado por opciones.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <h4>🌊 Flujo Natural</h4>
+                    <p>Transiciones suaves y progresivas. El buyer avanza en su journey sin saltos bruscos ni cambios de contexto.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <h4>🎨 Micro-Interacciones</h4>
+                    <p>Cada acción tiene feedback visual inmediato. El usuario siempre sabe que algo está pasando.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📱 Las 3 Vistas Principales</h2>
+            
+            <p>Hemos simplificado el flujo a <strong>3 vistas esenciales</strong> que cubren todo el journey del buyer:</p>
+
+            <div class="wireframe-grid">
+                <div class="wireframe-card">
+                    <h4>1️⃣ Vista de Orden</h4>
+                    <p style="margin-bottom: 12px; font-size: 14px; color: #666;">Todo en un solo lugar</p>
+                    <ul>
+                        <li>Estado actual prominente</li>
+                        <li>Timeline visual simplificado</li>
+                        <li>Acciones contextuales</li>
+                        <li>Información del pedido</li>
+                        <li>Mapa interactivo (si está en ruta)</li>
+                        <li>Botón de ayuda siempre visible</li>
+                    </ul>
+                </div>
+                
+                <div class="wireframe-card">
+                    <h4>2️⃣ Modal de Autogestión</h4>
+                    <p style="margin-bottom: 12px; font-size: 14px; color: #666;">Editar dirección o reportar</p>
+                    <ul>
+                        <li>Aparece desde abajo (sheet)</li>
+                        <li>Formulario simplificado</li>
+                        <li>Mapa integrado</li>
+                        <li>Previsualización de cambios</li>
+                        <li>Confirmación clara</li>
+                        <li>Cierra deslizando hacia abajo</li>
+                    </ul>
+                </div>
+                
+                <div class="wireframe-card">
+                    <h4>3️⃣ Vista Post-Entrega</h4>
+                    <p style="margin-bottom: 12px; font-size: 14px; color: #666;">Evidencias y calificación</p>
+                    <ul>
+                        <li>Fotos de entrega grandes</li>
+                        <li>Detalles de quién recibió</li>
+                        <li>Calificación con estrellas</li>
+                        <li>Reporte de problemas</li>
+                        <li>Descarga de comprobante</li>
+                        <li>Compartir experiencia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎨 Mockups Interactivos</h2>
+            
+            <h3>Vista 1: Orden Activa (En Preparación)</h3>
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <span>📶 5G 🔋</span>
+                    </div>
+                    <div class="screen-content">
+                        <div class="seller-header">
+                            <div class="seller-logo">LOGO SELLER</div>
+                            <p style="font-size: 12px; color: #666;">Orden #12345</p>
+                        </div>
+                        
+                        <div class="progress-dots">
+                            <div class="dot completed">✓</div>
+                            <div class="dot active">2</div>
+                            <div class="dot pending">3</div>
+                            <div class="dot pending">4</div>
+                        </div>
+                        
+                        <div class="status-card">
+                            <h2>📦 En Preparación</h2>
+                            <p>Tu pedido está siendo empacado</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-title">📍 Dirección de Entrega</div>
+                            <div class="card-content">
+                                <strong>Calle 123 #45-67</strong><br>
+                                Apto 301, Torre B<br>
+                                Bogotá, Colombia
+                            </div>
+                            <button class="btn btn-secondary" style="margin-top: 12px;">
+                                ✏️ Editar dirección
+                            </button>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-title">📋 Timeline</div>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot completed"></div>
+                                    <strong>Orden confirmada</strong><br>
+                                    <small style="color: #666;">Hoy, 10:30 AM</small>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot active"></div>
+                                    <strong>En preparación</strong><br>
+                                    <small style="color: #666;">Ahora</small>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <span style="color: #999;">En ruta</span>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <span style="color: #999;">Entregado</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-title">🛍️ Tu Pedido</div>
+                            <div class="card-content">
+                                • Producto A (x1)<br>
+                                • Producto B (x2)<br>
+                                <strong>Total: $150.000</strong>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-danger">
+                            ❌ Cancelar pedido
+                        </button>
+                        
+                        <div style="text-align: center; padding: 20px; color: #999; font-size: 12px;">
+                            Powered by Melonn
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Vista 2: Modal Editar Dirección</h3>
+            <div class="phone-mockup">
+                <div class="phone-screen" style="position: relative;">
+                    <div class="screen-content" style="filter: blur(2px);">
+                        <div class="status-card">
+                            <h2>📦 En Preparación</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-overlay">
+                        <div class="modal-sheet">
+                            <div class="modal-header">
+                                <h3 style="margin: 0;">📍 Editar Dirección</h3>
+                                <span style="font-size: 24px; cursor: pointer;">✕</span>
+                            </div>
+                            
+                            <div style="background: #f0f4ff; padding: 12px; border-radius: 8px; margin-bottom: 16px; font-size: 13px;">
+                                ℹ️ Puedes editar hasta que el pedido sea enviado
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Dirección *</label>
+                                <input type="text" value="Calle 123 #45-67" />
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Complemento</label>
+                                <input type="text" value="Apto 301, Torre B" />
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Referencias para el transportista *</label>
+                                <input type="text" placeholder="Ej: Frente al parque, casa azul..." />
+                            </div>
+                            
+                            <div style="background: #e9ecef; height: 120px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 16px 0;">
+                                🗺️ Vista previa del mapa
+                            </div>
+                            
+                            <button class="btn btn-primary">
+                                💾 Guardar cambios
+                            </button>
+                            <button class="btn btn-secondary">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Vista 3: Post-Entrega</h3>
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <span>📶 5G 🔋</span>
+                    </div>
+                    <div class="screen-content">
+                        <div class="seller-header">
+                            <div class="seller-logo">LOGO SELLER</div>
+                        </div>
+                        
+                        <div class="progress-dots">
+                            <div class="dot completed">✓</div>
+                            <div class="dot completed">✓</div>
+                            <div class="dot completed">✓</div>
+                            <div class="dot completed">✓</div>
+                        </div>
+                        
+                        <div class="status-card" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
+                            <div style="font-size: 48px; margin-bottom: 8px;">🎉</div>
+                            <h2>¡Entregado!</h2>
+                            <p>Hoy, 2:30 PM</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-title">📸 Evidencia de Entrega</div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 12px;">
+                                <div style="background: #e9ecef; height: 80px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">📷</div>
+                                <div style="background: #e9ecef; height: 80px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">📷</div>
+                                <div style="background: #e9ecef; height: 80px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">📷</div>
+                            </div>
+                            <button class="btn btn-secondary" style="margin-top: 12px;">
+                                📥 Descargar todas
+                            </button>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-title">👤 Recibido por</div>
+                            <div class="card-content">
+                                <strong>Maria Luisa Yepes</strong><br>
+                                Entregado en: Puerta principal
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-title">⭐ ¿Cómo fue tu experiencia?</div>
+                            <div class="rating-stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star" style="color: #e9ecef;">★</span>
+                            </div>
+                            <p style="text-align: center; font-size: 13px; color: #666;">¡Tu opinión nos ayuda a mejorar!</p>
+                        </div>
+                        
+                        <div class="card" style="border-color: #dc3545;">
+                            <div class="card-title" style="color: #dc3545;">⚠️ ¿Tienes algún problema?</div>
+                            <p style="font-size: 13px; color: #666; margin-bottom: 12px;">
+                                No recibí mi pedido / Producto dañado / Faltan productos
+                            </p>
+                            <button class="btn btn-danger">
+                                🚨 Reportar problema
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Funcionalidades Priorizadas</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Funcionalidad</th>
+                        <th>Vista</th>
+                        <th>Tipo</th>
+                        <th>Impacto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tracking visual simplificado</td>
+                        <td>Vista de Orden</td>
+                        <td><span class="tag tag-must">Must-Have</span></td>
+                        <td>🔥🔥🔥</td>
+                    </tr>
+                    <tr>
+                        <td>Editar dirección</td>
+                        <td>Modal Autogestión</td>
+                        <td><span class="tag tag-must">Must-Have</span></td>
+                        <td>🔥🔥🔥</td>
+                    </tr>
+                    <tr>
+                        <td>Cancelar pedido</td>
+                        <td>Vista de Orden</td>
+                        <td><span class="tag tag-must">Must-Have</span></td>
+                        <td>🔥🔥</td>
+                    </tr>
+                    <tr>
+                        <td>Evidencia de entrega</td>
+                        <td>Post-Entrega</td>
+                        <td><span class="tag tag-must">Must-Have</span></td>
+                        <td>🔥🔥🔥</td>
+                    </tr>
+                    <tr>
+                        <td>Calificación de servicio</td>
+                        <td>Post-Entrega</td>
+                        <td><span class="tag tag-must">Must-Have</span></td>
+                        <td>🔥🔥</td>
+                    </tr>
+                    <tr>
+                        <td>Reportar problemas</td>
+                        <td>Modal Autogestión</td>
+                        <td><span class="tag tag-nice">Nice-to-Have</span></td>
+                        <td>🔥🔥</td>
+                    </tr>
+                    <tr>
+                        <td>Mapa interactivo en ruta</td>
+                        <td>Vista de Orden</td>
+                        <td><span class="tag tag-nice">Nice-to-Have</span></td>
+                        <td>🔥</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Innovaciones Out of the Box</h2>
+            
+            <div class="innovation-grid">
+                <div class="innovation-card">
+                    <h4>🎴 Tarjeta de Estado Inteligente</h4>
+                    <p>En lugar de un timeline complejo, usamos una tarjeta prominente que muestra solo el estado actual y la siguiente acción esperada. Menos información, más claridad.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <h4>📍 Dirección como Hero</h4>
+                    <p>La dirección de entrega es uno de los elementos más importantes. La destacamos con su propia card y botón de edición prominente.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <h4>⚡ Acciones Contextuales</h4>
+                    <p>Las acciones disponibles cambian según el estado del pedido. No mostramos "Editar dirección" si ya está en ruta, por ejemplo.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <h4>🎉 Celebración Post-Entrega</h4>
+                    <p>La vista de entregado es una celebración. Usamos colores verdes, emojis y un diseño festivo para cerrar el journey con emoción positiva.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <h4>💬 Lenguaje Conversacional</h4>
+                    <p>Textos como "Tu pedido está siendo empacado" en lugar de "Estado: En preparación". Hablamos como humanos, no como máquinas.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <h4>👆 Gestos Intuitivos</h4>
+                    <p>Los modales se cierran deslizando hacia abajo, como en apps nativas. Sin botones de "Cerrar" complicados.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Comparativa: Antes vs Después</h2>
+            
+            <div class="wireframe-grid">
+                <div class="wireframe-card">
+                    <h4>❌ Antes (7 vistas)</h4>
+                    <ul>
+                        <li>Confirmación</li>
+                        <li>Preparación</li>
+                        <li>Transporte</li>
+                        <li>Entrega</li>
+                        <li>Editar Dirección</li>
+                        <li>Reportar Problema</li>
+                        <li>Mis Pedidos</li>
+                    </ul>
+                    <p style="margin-top: 12px; font-size: 14px; color: #dc3545;">
+                        <strong>Problema:</strong> Navegación compleja, saltos bruscos entre pantallas
+                    </p>
+                </div>
+                
+                <div class="wireframe-card" style="border-color: #28a745;">
+                    <h4>✅ Después (3 vistas)</h4>
+                    <ul>
+                        <li><strong>Vista de Orden</strong> - Todo en uno</li>
+                        <li><strong>Modal Autogestión</strong> - Edit/Reportar</li>
+                        <li><strong>Post-Entrega</strong> - Evidencias</li>
+                    </ul>
+                    <p style="margin-top: 12px; font-size: 14px; color: #28a745;">
+                        <strong>Ventaja:</strong> Flujo natural, sin pérdida de contexto
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎨 Especificaciones Visuales</h2>
+            
+            <h3>Paleta de Colores</h3>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0;">
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; margin-bottom: 8px;"></div>
+                    <small>Primario<br>#667eea → #764ba2</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: #28a745; border-radius: 12px; margin-bottom: 8px;"></div>
+                    <small>Éxito<br>#28a745</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: #ffc107; border-radius: 12px; margin-bottom: 8px;"></div>
+                    <small>Alerta<br>#ffc107</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: #dc3545; border-radius: 12px; margin-bottom: 8px;"></div>
+                    <small>Error<br>#dc3545</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: #f8f9fa; border-radius: 12px; margin-bottom: 8px; border: 1px solid #ddd;"></div>
+                    <small>Fondo<br>#f8f9fa</small>
+                </div>
+            </div>
+            
+            <h3>Tipografía</h3>
+            <p><strong>Sistema:</strong> -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto<br>
+            <strong>Títulos:</strong> 20-24px, Bold<br>
+            <strong>Body:</strong> 14-16px, Regular<br>
+            <strong>Small:</strong> 12-13px, Regular</p>
+            
+            <h3>Componentes</h3>
+            <ul>
+                <li><strong>Cards:</strong> Border-radius 12-16px, sombra suave</li>
+                <li><strong>Botones:</strong> Altura 48px (tappable), border-radius 12px</li>
+                <li><strong>Inputs:</strong> Border-radius 10px, padding 12px</li>
+                <li><strong>Modals:</strong> Border-radius top 24px, slide up</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📱 Responsive Considerations</h2>
+            
+            <div class="innovation-grid">
+                <div class="innovation-card">
+                    <h4>📱 Mobile (375px)</h4>
+                    <p>Diseño principal. Todo optimizado para pantallas pequeñas. Touch targets de 48px mínimo.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <h4>💻 Desktop</h4>
+                    <p>El diseño se centra en un container de 480px max-width, manteniendo la experiencia mobile-first.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>✅ Checklist para Implementación</h2>
+            
+            <div class="wireframe-grid">
+                <div class="wireframe-card">
+                    <h4>Fase 1: MVP (Semanas 1-4)</h4>
+                    <ul>
+                        <li>Vista de Orden básica</li>
+                        <li>Timeline simplificado</li>
+                        <li>Editar dirección</li>
+                        <li>Cancelar pedido</li>
+                        <li>Vista Post-Entrega</li>
+                        <li>White-label básico</li>
+                    </ul>
+                </div>
+                
+                <div class="wireframe-card">
+                    <h4>Fase 2: Enhancements (Semanas 5-8)</h4>
+                    <ul>
+                        <li>Mapa interactivo</li>
+                        <li>Evidencias de entrega</li>
+                        <li>Calificación con estrellas</li>
+                        <li>Reporte de problemas</li>
+                        <li>Notificaciones push</li>
+                        <li>Analytics básico</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Próximos Pasos</h2>
+            
+            <ol style="font-size: 16px; line-height: 2;">
+                <li><strong>Validación con stakeholders</strong> - Revisión de wireframes con equipo de Producto</li>
+                <li><strong>User Testing</strong> - Testear flujos con 5-10 buyers reales</li>
+                <li><strong>Handoff a UX/UI</strong> - Crear diseño de alta fidelidad en Figma</li>
+                <li><strong>Definición de APIs</strong> - Documentar endpoints necesarios con Backend</li>
+                <li><strong>Desarrollo MVP</strong> - Implementar Fase 1 (4 semanas)</li>
+            </ol>
+        </div>
+
+        <footer>
+            <p><strong>Propuesta de Wireframes - Buyer Portal V2.0</strong></p>
+            <p>Preparado para el equipo de UX | Melonn</p>
+            <p style="margin-top: 16px; font-size: 12px; color: #999;">
+                Diseño: Mobile-First | 3 Vistas | Out of the Box
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
